@@ -12,6 +12,7 @@
             android:id="@+id/reg_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginTop="50dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:src="@drawable/profile"/>

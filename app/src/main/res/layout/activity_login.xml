@@ -1,10 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
         tools:context=".LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/email"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="13dp"
+            android:background="@drawable/input"
+            android:inputType="textEmailAddress"
+            android:textSize="16sp"/>
+
+    <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            android:padding="13dp"
+            android:background="@drawable/input"
+            android:layout_below="@id/login_email"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:inputType="textPassword"
+            android:textSize="16sp"/>
+
+    <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@id/login_password"
+            android:textAllCaps="false"
+            android:layout_margin="30dp"
+            android:textSize="18sp"
+            android:background="@drawable/button_layout"
+            android:text="@string/Login"/>
+
+    <TextView
+            android:id="@+id/login_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/login_btn"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@string/don_t_have_an_account_register"/>
+
+
+</RelativeLayout>
