@@ -3,19 +3,30 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@color/colorPrimary"
         android:gravity="center_horizontal"
-        tools:context=".MainActivity">
+        tools:context=".RegisterActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/reg_image"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="50dp"
+            app:civ_border_width="4dp"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
             android:src="@drawable/profile"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_photo"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
 
     <EditText
             android:id="@+id/reg_username"
@@ -29,7 +40,7 @@
             android:padding="13dp"
             android:background="@drawable/input"
             android:layout_below="@id/reg_image"
-            android:textSize="16sp"/>
+            android:textSize="16sp" android:importantForAutofill="no"/>
 
     <EditText
             android:id="@+id/reg_email"
@@ -43,7 +54,7 @@
             android:padding="13dp"
             android:background="@drawable/input"
             android:inputType="textEmailAddress"
-            android:textSize="16sp"/>
+            android:textSize="16sp" android:autofillHints=""/>
 
     <EditText
             android:id="@+id/reg_password"
@@ -56,7 +67,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:inputType="textPassword"
-            android:textSize="16sp"/>
+            android:textSize="16sp" android:autofillHints=""/>
 
     <Button
             android:id="@+id/reg_btn"
