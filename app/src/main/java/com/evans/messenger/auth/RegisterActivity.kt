@@ -1,16 +1,16 @@
-package com.evans.messenger
+package com.evans.messenger.auth
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
-import com.bumptech.glide.Glide
+import com.evans.messenger.R
+import com.evans.messenger.messages.LatestMessagesActivity
+import com.evans.messenger.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -119,6 +119,3 @@ class RegisterActivity : AppCompatActivity() {
     }
 }
 
-class User(val uid: String, val username: String, val profileImage: String){
-    constructor() : this("", "", "")
-}

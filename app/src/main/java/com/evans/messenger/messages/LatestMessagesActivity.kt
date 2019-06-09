@@ -1,4 +1,4 @@
-package com.evans.messenger
+package com.evans.messenger.messages
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.evans.messenger.auth.LoginActivity
+import com.evans.messenger.R
 import com.google.firebase.auth.FirebaseAuth
 
 class LatestMessagesActivity : AppCompatActivity() {
