@@ -83,7 +83,6 @@ class RegisterActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (!it.isSuccessful) return@addOnCompleteListener
                 // else if request is successful
-                Log.d("Register", "User created with uid: ${it.result!!.user.uid}")
                 uploadImage()
             }
             .addOnFailureListener{
@@ -95,7 +94,6 @@ class RegisterActivity : AppCompatActivity() {
         if (selectedPhotoUri == null) return
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
-
         ref.putFile(selectedPhotoUri!!)
             .addOnSuccessListener {
                 Log.d("Register", "Successfully uploaded image: ${it.metadata?.path}")
@@ -111,14 +109,16 @@ class RegisterActivity : AppCompatActivity() {
     private fun saveUser(profileImage: String) {
         val uid = FirebaseAuth.getInstance().uid ?: ""//check if uid is null
         val ref = FirebaseDatabase.getInstance().getReference("users/$uid")
-
         val user = User(uid, reg_username.text.toString(), profileImage)
-
         ref.setValue(user)
             .addOnSuccessListener {
-                Log.d("Register", "User saved")
+                val intent = Intent(this, LatestMessagesActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
             }
     }
 }
 
-class User(val uid: String, val username: String, val profileImage: String)
+class User(val uid: String, val username: String, val profileImage: String){
+    constructor() : this("", "", "")
+}
